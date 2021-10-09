@@ -1,5 +1,5 @@
 pipeline {
-    agent { label "master" }
+    agent any
     environment {
         PATH=sh(script:"echo $PATH:/usr/local/bin", returnStdout:true).trim()
         AWS_REGION = "us-east-1"
@@ -122,7 +122,3 @@ pipeline {
     }
 }
 
-pipeline {
-    agent {label "master"}
-    environment
-}
