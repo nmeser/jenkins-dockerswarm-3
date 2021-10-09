@@ -162,7 +162,7 @@ Resources:
   DockerManager1:
     Type: AWS::EC2::Instance
     Properties:
-      ImageId: ami-038b5c5d2ad6a5090
+      ImageId: ami-087c17d1fe0178315
       InstanceType: t2.medium
       KeyName: !Ref KeyPairName
       IamInstanceProfile: !Ref EC2ConnectProfile
