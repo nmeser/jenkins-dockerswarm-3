@@ -87,7 +87,7 @@ Resources:
     Type: "AWS::EC2::LaunchTemplate"
     Properties:
       LaunchTemplateData:
-        ImageId: ami-038b5c5d2ad6a5090
+        ImageId: ami-087c17d1fe0178315
         InstanceType: t2.micro
         KeyName: !Ref KeyPairName
         IamInstanceProfile: 
@@ -125,7 +125,7 @@ Resources:
     Type: "AWS::EC2::LaunchTemplate"
     Properties:
       LaunchTemplateData:
-        ImageId: ami-038b5c5d2ad6a5090
+        ImageId: ami-087c17d1fe0178315
         InstanceType: t2.micro
         KeyName: !Ref KeyPairName
         IamInstanceProfile: 
