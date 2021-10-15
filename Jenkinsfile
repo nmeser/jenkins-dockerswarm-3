@@ -121,4 +121,27 @@ pipeline {
         }
     }
 }
+ 
+        
+    }
+        
+    post {
+        always {
+            echo 'Deleting all local images'
+            sh 'docker image prune -af'
+        }
+        failure {
+
+            echo 'Delete the Image Repository on ECR due to the Failure'
+            sh """
+                aws ecr delete-repository \
+                  --repository-name ${APP_REPO_NAME} \
+                  --region ${AWS_REGION}\
+                  --force
+                """
+            echo 'Deleting Cloudformation Stack due to the Failure'
+                sh 'aws cloudformation delete-stack --region ${AWS_REGION} --stack-name ${AWS_STACK_NAME}'
+        }
+    }
+}
 
